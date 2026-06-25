@@ -1,5 +1,5 @@
 [3d.html](https://github.com/user-attachments/files/29357483/3d.html)
-<!DOCTYPE html>
+
 <html lang="uk">
 <head>
     <meta charset="UTF-8" />
