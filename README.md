@@ -1,4 +1,4 @@
-[3d.html](https://github.com/user-attachments/files/29357483/3d.html)
+(https://github.com/user-attachments/files/29357483/3d.html)
 
 <html lang="uk">
 <head>
