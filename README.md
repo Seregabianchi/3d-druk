@@ -1156,7 +1156,7 @@
         // ---- ЗАПЧАСТИНИ: 48 позиций с переведёнными названиями ----
         const partData = [
             { uk: 'Підставка під чашку Rhea black', ru: 'Подставка под чашку Rhea black', price: 85,
-                img: '/catalog-3d/IMG_3583E5378B33-1.jpeg' },
+                img: 'src=/catalog-3d/IMG_3583E5378B33-1.jpeg' },
             { uk: '251797 Пластиковий фіксатор видачі (Necta)', ru: '251797 Пластиковый фиксатор выдачи (Necta)',
                 price: 50, img: '/catalog-3d/IMG_3583E5378B33-2.jpeg' },
             { uk: 'Кріплення підставки під чашку Cino eC, XS Grande, Rhea black',
