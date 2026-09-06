@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <base href="/3d-druk/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ремонт Апаратів Bianchi | Premium сервіс</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BianchiPRO - Сервіс та запчастини</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ============================================================
-           RESET & VARIABLES
-        ============================================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --primary: #7e57c2;
             --primary-dark: #673ab7;
@@ -42,6 +35,7 @@
             font-family: 'Raleway', sans-serif;
             line-height: 1.7;
             padding-top: var(--header-height);
+            margin: 0;
         }
 
         .container {
@@ -68,6 +62,7 @@
             height: var(--header-height);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
             transition: box-shadow var(--transition);
+            box-sizing: border-box;
         }
 
         header.scrolled {
@@ -92,6 +87,8 @@
             display: flex;
             list-style: none;
             gap: 8px;
+            margin: 0;
+            padding: 0;
         }
 
         nav ul li a {
@@ -568,6 +565,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .cart-modal.active {
@@ -585,6 +583,7 @@
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
             animation: fadeUp 0.25s ease;
+            box-sizing: border-box;
         }
 
         @keyframes fadeUp {
@@ -618,6 +617,7 @@
         .cart-items {
             list-style: none;
             margin: 12px 0;
+            padding: 0;
         }
 
         .cart-item {
@@ -866,7 +866,6 @@
     </style>
 </head>
 <body>
-
     <!-- ============================================================
     HEADER
     ============================================================ -->
@@ -1139,7 +1138,7 @@
         };
 
         // ============================================================
-        // 2. PRODUCT DATA (с переведёнными названиями и описанием)
+        // 2. PRODUCT DATA
         // ============================================================
         function buildProduct(id, titleUk, titleRu, descUk, descRu, price, image) {
             return {
@@ -1153,112 +1152,113 @@
             };
         }
 
-        // ---- ЗАПЧАСТИНИ: 48 позиций с переведёнными названиями ----
+        // ---- ЗАПЧАСТИНИ: 48 позиций (исправленные пути) ----
         const partData = [
-    { uk: 'Підставка під чашку Rhea black', ru: 'Подставка под чашку Rhea black', price: 85,
-        img: 'catalog-3d/IMG_3583E5378B33-1.jpeg' },
-    { uk: '251797 Пластиковий фіксатор видачі (Necta)', ru: '251797 Пластиковый фиксатор выдачи (Necta)',
-        price: 50, img: 'catalog-3d/IMG_3583E5378B33-2.jpeg' },
-    { uk: 'Кріплення підставки під чашку Cino eC, XS Grande, Rhea black',
-        ru: 'Крепление подставки под чашку Cino eC, XS Grande, Rhea black', price: 15,
-        img: 'catalog-3d/IMG_3583E5378B33-3.jpeg' },
-    { uk: 'Гайка на трубку подачі кави XS-E, Cino Rhea', ru: 'Гайка на трубку подачи кофе XS-E, Cino Rhea',
-        price: 23, img: 'catalog-3d/IMG_3583E5378B33-4.jpeg' },
-    { uk: 'Підставка/піддон для чашку KORINTO, NECTA - 260186 (252451)',
-        ru: 'Подставка/поддон для чашки KORINTO, NECTA - 260186 (252451)', price: 420,
-        img: 'catalog-3d/IMG_3583E5378B33-5.jpeg' },
-    { uk: 'Фіксатор пружини', ru: 'Фиксатор пружины', price: 35,
-        img: 'catalog-3d/IMG_3583E5378B33-6.jpeg' },
-    { uk: 'Запчастина №7', ru: 'Запчасть №7', price: 36,
-        img: 'catalog-3d/IMG_3583E5378B33-7.jpeg' },
-    { uk: 'Шестерня/Вал/Магніт Rhea', ru: 'Шестерня/Вал/Магнит Rhea', price: 60,
-        img: 'catalog-3d/IMG_0739.JPG' },
-    { uk: 'Стопор двигуна міксера RAL2011 Rhea', ru: 'Стопор двигателя миксера RAL2011 Rhea', price: 55,
-        img: 'catalog-3d/IMG_3583E5378B33-9.jpeg' },
-    { uk: 'піддон краплесбірникник, NECTA (KORO) - 260187 (251788)',
-        ru: 'поддон каплесборника, NECTA (KORO) - 260187 (251788)', price: 1100,
-        img: 'catalog-3d/IMG_3583E5378B33-10.jpeg' },
-    { uk: 'Носик подачі молотої кави Multibona', ru: 'Носик подачи молотого кофе Multibona', price: 35,
-        img: 'catalog-3d/IMG_3583E5378B33-11.jpeg' },
-    { uk: 'Кріплення для носиків видачі напоїв — Bianchi 05246215-01M09 — 05246215M37',
-        ru: 'Крепление для носиков выдачи напитков — Bianchi 05246215-01M09 — 05246215M37', price: 60,
-        img: 'catalog-3d/IMG_3583E5378B33-12.jpeg' },
-    { uk: 'Решітка, NECTA - 260188', ru: 'Решетка, NECTA - 260188', price: 280,
-        img: 'catalog-3d/IMG_3583E5378B33-13.jpeg' },
-    { uk: 'Тримач носиків видачі напоїв Talia', ru: 'Держатель носиков выдачи напитков Talia', price: 85,
-        img: 'catalog-3d/IMG_3583E5378B33-14.jpeg' },
-    { uk: '251790 Фіксатор підскляника Necta Koro', ru: '251790 Фиксатор подстаканника Necta Koro', price: 250,
-        img: 'catalog-3d/IMG_3583E5378B33-15.jpeg' },
-    { uk: 'Противибраційна втулка Rhea', ru: 'Провибрационная втулка Rhea', price: 28,
-        img: 'catalog-3d/IMG_3583E5378B33-16.jpeg' },
-    { uk: 'Засувка бункера зерна Gaia', ru: 'Задвижка бункера зерна Gaia', price: 57,
-        img: 'catalog-3d/IMG_3583E5378B33-17.jpeg' },
-    { uk: 'Запчастина №18', ru: 'Запчасть №18', price: 72,
-        img: 'catalog-3d/IMG_3583E5378B33-18.jpeg' },
-    { uk: 'Кріплення для тримача стаканів Bianchi Talia', ru: 'Крепление для держателя стаканов Bianchi Talia',
-        price: 75, img: 'catalog-3d/IMG_3583E5378B33-19.jpeg' },
-    { uk: 'Тримач стаканів Bianchi Talia', ru: 'Держатель стаканов Bianchi Talia', price: 135,
-        img: 'catalog-3d/IMG_3583E5378B33-20.jpeg' },
-    { uk: '251791 Підстаканник Necta Koro', ru: '251791 Подстаканник Necta Koro', price: 190,
-        img: 'catalog-3d/IMG_3583E5378B33-21.jpeg' },
-    { uk: 'Заглушка монетника Rhea (Black)', ru: 'Заглушка монетника Rhea (Black)', price: 47,
-        img: 'catalog-3d/IMG_3583E5378B33-22.jpeg' },
-    { uk: 'Заглушка отвору корпуса Rhea', ru: 'Заглушка отверстия корпуса Rhea', price: 28,
-        img: 'catalog-3d/IMG_3583E5378B33-23.jpeg' },
-    { uk: 'Жолоб подачі меленої кави Rhea', ru: 'Желоб подачи молотого кофе Rhea', price: 50,
-        img: 'catalog-3d/IMG_3583E5378B33-24.jpeg' },
-    { uk: 'Тримач трубок Cino Rhea (Grey)', ru: 'Держатель трубок Cino Rhea (Grey)', price: 240,
-        img: 'catalog-3d/IMG_3583E5378B33-25.jpeg' },
-    { uk: 'Кришка бункера Gaia style', ru: 'Крышка бункера Gaia style', price: 320,
-        img: 'catalog-3d/IMG_3583E5378B33-26.jpeg' },
-    { uk: 'Кришка розчинного бункера Rhea', ru: 'Крышка растворимого бункера Rhea', price: 190,
-        img: 'catalog-3d/IMG_3583E5378B33-27.jpeg' },
-    { uk: 'Запчастина №28', ru: 'Запчасть №28', price: 25,
-        img: 'catalog-3d/IMG_3583E5378B33-28.jpeg' },
-    { uk: 'Ведена шестерня редуктора кавомолки Rhea', ru: 'Ведомая шестерня редуктора кофемолки Rhea', price: 72,
-        img: 'catalog-3d/IMG_3583E5378B33-29.jpeg' },
-    { uk: 'Провідна шестерня редуктора кавомолки Rhea', ru: 'Ведущая шестерня редуктора кофемолки Rhea',
-        price: 75, img: 'catalog-3d/IMG_3583E5378B33-30.jpeg' },
-    { uk: 'Решітка краплезбірника Rheavendors', ru: 'Решетка каплесборника Rheavendors', price: 780,
-        img: 'catalog-3d/IMG_3583E5378B33-31.jpeg' },
-    { uk: 'Направляюча моленої кави, Rheavendors - 0250008036',
-        ru: 'Направляющая молотого кофе, Rheavendors - 0250008036', price: 180,
-        img: 'catalog-3d/IMG_3583E5378B33-32.jpeg' },
-    { uk: 'Основа Сигналізатора рівня води в краплесбірнику Gaia',
-        ru: 'Основа Сигнализатора уровня воды в каплесборнике Gaia', price: 12,
-        img: 'catalog-3d/IMG_3583E5378B33-33.jpeg' },
-    { uk: 'Сигналізатор рівня води в краплесбірнику Gaia', ru: 'Сигнализатор уровня воды в каплесборнике Gaia',
-        price: 22, img: 'catalog-3d/IMG_3583E5378B33-34.jpeg' },
-    { uk: '05262815М09 Кришка корпусу для наливу води', ru: '05262815М09 Крышка корпуса для налива воды',
-        price: 115, img: 'catalog-3d/IMG_3583E5378B33-35.jpeg' },
-    { uk: 'Транспортер кави (крильчатка)', ru: 'Транспортер кофе (крыльчатка)', price: 38,
-        img: 'catalog-3d/IMG_3583E5378B33-36.jpeg' },
-    { uk: 'Заглушка канала монет Bianchi Talia', ru: 'Заглушка канала монет Bianchi Talia', price: 250,
-        img: 'catalog-3d/IMG_3583E5378B33-37.jpeg' },
-    { uk: 'Засувка бункера зерна Bianchi Talia', ru: 'Задвижка бункера зерна Bianchi Talia', price: 85,
-        img: 'catalog-3d/IMG_3583E5378B33-38.jpeg' },
-    { uk: 'Заглушка канала монет внутрішня Rhea', ru: 'Заглушка канала монет внутренняя Rhea', price: 85,
-        img: 'catalog-3d/IMG_3583E5378B33-39.jpeg' },
-    { uk: 'Запчастина №40', ru: 'Запчасть №40', price: 60,
-        img: 'catalog-3d/IMG_3583E5378B33-40.jpeg' },
-    { uk: 'Запчастина №41', ru: 'Запчасть №41', price: 80,
-        img: 'catalog-3d/IMG_3583E5378B33-41.jpeg' },
-    { uk: 'Основа дверей Necta Korinto', ru: 'Основа дверей Necta Korinto', price: 1850,
-        img: 'catalog-3d/IMG_3583E5378B33-42.jpeg' },
-    { uk: 'Тримач носиків видачі напоїв NECTA (KORO / KORINTO) - 251798',
-        ru: 'Держатель носиков выдачи напитков NECTA (KORO / KORINTO) - 251798', price: 850,
-        img: 'catalog-3d/IMG_3583E5378B33-43.jpeg' },
-    { uk: '0010024154 Бункер жмиху Rheavendors', ru: '0010024154 Бункер жмыха Rheavendors', price: 850,
-        img: 'https://picsum.photos/seed/parts44/300/200' },
-    { uk: 'Решітка підстаканника NECTA KORINTO', ru: 'Решетка подстаканника NECTA KORINTO', price: 2300,
-        img: 'https://picsum.photos/seed/parts45/300/200' },
-    { uk: 'Запчастина №46', ru: 'Запчасть №46', price: 650,
-        img: 'https://picsum.photos/seed/parts46/300/200' },
-    { uk: 'Запчастина №47', ru: 'Запчасть №47', price: 3600,
-        img: 'https://picsum.photos/seed/parts47/300/200' },
-    { uk: 'Запчастина №48', ru: 'Запчасть №48', price: 1040,
-        img: 'https://picsum.photos/seed/parts48/300/200' }
-];
+            { uk: 'Підставка під чашку Rhea black', ru: 'Подставка под чашку Rhea black', price: 85,
+                img: 'catalog-3d/IMG_3583E5378B33-1.jpeg' },
+            { uk: '251797 Пластиковий фіксатор видачі (Necta)', ru: '251797 Пластиковый фиксатор выдачи (Necta)',
+                price: 50, img: 'catalog-3d/IMG_3583E5378B33-2.jpeg' },
+            { uk: 'Кріплення підставки під чашку Cino eC, XS Grande, Rhea black',
+                ru: 'Крепление подставки под чашку Cino eC, XS Grande, Rhea black', price: 15,
+                img: 'catalog-3d/IMG_3583E5378B33-3.jpeg' },
+            { uk: 'Гайка на трубку подачі кави XS-E, Cino Rhea', ru: 'Гайка на трубку подачи кофе XS-E, Cino Rhea',
+                price: 23, img: 'catalog-3d/IMG_3583E5378B33-4.jpeg' },
+            { uk: 'Підставка/піддон для чашку KORINTO, NECTA - 260186 (252451)',
+                ru: 'Подставка/поддон для чашки KORINTO, NECTA - 260186 (252451)', price: 420,
+                img: 'catalog-3d/IMG_3583E5378B33-5.jpeg' },
+            { uk: 'Фіксатор пружини', ru: 'Фиксатор пружины', price: 35,
+                img: 'catalog-3d/IMG_3583E5378B33-6.jpeg' },
+            { uk: 'Запчастина №7', ru: 'Запчасть №7', price: 36,
+                img: 'catalog-3d/IMG_3583E5378B33-7.jpeg' },
+            { uk: 'Шестерня/Вал/Магніт Rhea', ru: 'Шестерня/Вал/Магнит Rhea', price: 60,
+                img: 'catalog-3d/IMG_0739.JPG' },
+            { uk: 'Стопор двигуна міксера RAL2011 Rhea', ru: 'Стопор двигателя миксера RAL2011 Rhea', price: 55,
+                img: 'catalog-3d/IMG_3583E5378B33-9.jpeg' },
+            { uk: 'піддон краплесбірникник, NECTA (KORO) - 260187 (251788)',
+                ru: 'поддон каплесборника, NECTA (KORO) - 260187 (251788)', price: 1100,
+                img: 'catalog-3d/IMG_3583E5378B33-10.jpeg' },
+            { uk: 'Носик подачі молотої кави Multibona', ru: 'Носик подачи молотого кофе Multibona', price: 35,
+                img: 'catalog-3d/IMG_3583E5378B33-11.jpeg' },
+            { uk: 'Кріплення для носиків видачі напоїв — Bianchi 05246215-01M09 — 05246215M37',
+                ru: 'Крепление для носиков выдачи напитков — Bianchi 05246215-01M09 — 05246215M37', price: 60,
+                img: 'catalog-3d/IMG_3583E5378B33-12.jpeg' },
+            { uk: 'Решітка, NECTA - 260188', ru: 'Решетка, NECTA - 260188', price: 280,
+                img: 'catalog-3d/IMG_3583E5378B33-13.jpeg' },
+            { uk: 'Тримач носиків видачі напоїв Talia', ru: 'Держатель носиков выдачи напитков Talia', price: 85,
+                img: 'catalog-3d/IMG_3583E5378B33-14.jpeg' },
+            { uk: '251790 Фіксатор підскляника Necta Koro', ru: '251790 Фиксатор подстаканника Necta Koro', price: 250,
+                img: 'catalog-3d/IMG_3583E5378B33-15.jpeg' },
+            { uk: 'Противибраційна втулка Rhea', ru: 'Провибрационная втулка Rhea', price: 28,
+                img: 'catalog-3d/IMG_3583E5378B33-16.jpeg' },
+            { uk: 'Засувка бункера зерна Gaia', ru: 'Задвижка бункера зерна Gaia', price: 57,
+                img: 'catalog-3d/IMG_3583E5378B33-17.jpeg' },
+            { uk: 'Запчастина №18', ru: 'Запчасть №18', price: 72,
+                img: 'catalog-3d/IMG_3583E5378B33-18.jpeg' },
+            { uk: 'Кріплення для тримача стаканів Bianchi Talia', ru: 'Крепление для держателя стаканов Bianchi Talia',
+                price: 75, img: 'catalog-3d/IMG_3583E5378B33-19.jpeg' },
+            { uk: 'Тримач стаканів Bianchi Talia', ru: 'Держатель стаканов Bianchi Talia', price: 135,
+                img: 'catalog-3d/IMG_3583E5378B33-20.jpeg' },
+            { uk: '251791 Підстаканник Necta Koro', ru: '251791 Подстаканник Necta Koro', price: 190,
+                img: 'catalog-3d/IMG_3583E5378B33-21.jpeg' },
+            { uk: 'Заглушка монетника Rhea (Black)', ru: 'Заглушка монетника Rhea (Black)', price: 47,
+                img: 'catalog-3d/IMG_3583E5378B33-22.jpeg' },
+            { uk: 'Заглушка отвору корпуса Rhea', ru: 'Заглушка отверстия корпуса Rhea', price: 28,
+                img: 'catalog-3d/IMG_3583E5378B33-23.jpeg' },
+            { uk: 'Жолоб подачі меленої кави Rhea', ru: 'Желоб подачи молотого кофе Rhea', price: 50,
+                img: 'catalog-3d/IMG_3583E5378B33-24.jpeg' },
+            { uk: 'Тримач трубок Cino Rhea (Grey)', ru: 'Держатель трубок Cino Rhea (Grey)', price: 240,
+                img: 'catalog-3d/IMG_3583E5378B33-25.jpeg' },
+            { uk: 'Кришка бункера Gaia style', ru: 'Крышка бункера Gaia style', price: 320,
+                img: 'catalog-3d/IMG_3583E5378B33-26.jpeg' },
+            { uk: 'Кришка розчинного бункера Rhea', ru: 'Крышка растворимого бункера Rhea', price: 190,
+                img: 'catalog-3d/IMG_3583E5378B33-27.jpeg' },
+            { uk: 'Запчастина №28', ru: 'Запчасть №28', price: 25,
+                img: 'catalog-3d/IMG_3583E5378B33-28.jpeg' },
+            { uk: 'Ведена шестерня редуктора кавомолки Rhea', ru: 'Ведомая шестерня редуктора кофемолки Rhea', price: 72,
+                img: 'catalog-3d/IMG_3583E5378B33-29.jpeg' },
+            { uk: 'Провідна шестерня редуктора кавомолки Rhea', ru: 'Ведущая шестерня редуктора кофемолки Rhea',
+                price: 75, img: 'catalog-3d/IMG_3583E5378B33-30.jpeg' },
+            { uk: 'Решітка краплезбірника Rheavendors', ru: 'Решетка каплесборника Rheavendors', price: 780,
+                img: 'catalog-3d/IMG_3583E5378B33-31.jpeg' },
+            { uk: 'Направляюча моленої кави, Rheavendors - 0250008036',
+                ru: 'Направляющая молотого кофе, Rheavendors - 0250008036', price: 180,
+                img: 'catalog-3d/IMG_3583E5378B33-32.jpeg' },
+            { uk: 'Основа Сигналізатора рівня води в краплесбірнику Gaia',
+                ru: 'Основа Сигнализатора уровня воды в каплесборнике Gaia', price: 12,
+                img: 'catalog-3d/IMG_3583E5378B33-33.jpeg' },
+            { uk: 'Сигналізатор рівня води в краплесбірнику Gaia', ru: 'Сигнализатор уровня воды в каплесборнике Gaia',
+                price: 22, img: 'catalog-3d/IMG_3583E5378B33-34.jpeg' },
+            { uk: '05262815М09 Кришка корпусу для наливу води', ru: '05262815М09 Крышка корпуса для налива воды',
+                price: 115, img: 'catalog-3d/IMG_3583E5378B33-35.jpeg' },
+            { uk: 'Транспортер кави (крильчатка)', ru: 'Транспортер кофе (крыльчатка)', price: 38,
+                img: 'catalog-3d/IMG_3583E5378B33-36.jpeg' },
+            { uk: 'Заглушка канала монет Bianchi Talia', ru: 'Заглушка канала монет Bianchi Talia', price: 250,
+                img: 'catalog-3d/IMG_3583E5378B33-37.jpeg' },
+            { uk: 'Засувка бункера зерна Bianchi Talia', ru: 'Задвижка бункера зерна Bianchi Talia', price: 85,
+                img: 'catalog-3d/IMG_3583E5378B33-38.jpeg' },
+            { uk: 'Заглушка канала монет внутрішня Rhea', ru: 'Заглушка канала монет внутренняя Rhea', price: 85,
+                img: 'catalog-3d/IMG_3583E5378B33-39.jpeg' },
+            { uk: 'Запчастина №40', ru: 'Запчасть №40', price: 60,
+                img: 'catalog-3d/IMG_3583E5378B33-40.jpeg' },
+            { uk: 'Запчастина №41', ru: 'Запчасть №41', price: 80,
+                img: 'catalog-3d/IMG_3583E5378B33-41.jpeg' },
+            { uk: 'Основа дверей Necta Korinto', ru: 'Основа дверей Necta Korinto', price: 1850,
+                img: 'catalog-3d/IMG_3583E5378B33-42.jpeg' },
+            { uk: 'Тримач носиків видачі напоїв NECTA (KORO / KORINTO) - 251798',
+                ru: 'Держатель носиков выдачи напитков NECTA (KORO / KORINTO) - 251798', price: 850,
+                img: 'catalog-3d/IMG_3583E5378B33-43.jpeg' },
+            { uk: '0010024154 Бункер жмиху Rheavendors', ru: '0010024154 Бункер жмыха Rheavendors', price: 850,
+                img: 'https://picsum.photos/seed/parts44/300/200' },
+            { uk: 'Решітка підстаканника NECTA KORINTO', ru: 'Решетка подстаканника NECTA KORINTO', price: 2300,
+                img: 'https://picsum.photos/seed/parts45/300/200' },
+            { uk: 'Запчастина №46', ru: 'Запчасть №46', price: 650,
+                img: 'https://picsum.photos/seed/parts46/300/200' },
+            { uk: 'Запчастина №47', ru: 'Запчасть №47', price: 3600,
+                img: 'https://picsum.photos/seed/parts47/300/200' },
+            { uk: 'Запчастина №48', ru: 'Запчасть №48', price: 1040,
+                img: 'https://picsum.photos/seed/parts48/300/200' }
+        ];
+
         const descUk = '3D-запчастина для кавового обладнання.';
         const descRu = '3D-запчасть для кофейного оборудования.';
 
